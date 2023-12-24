@@ -13,3 +13,5 @@ Suggests:
 Language: en-US
 URL: https://github.com/Ahmad-Alsaleh/relbelief
 BugReports: https://github.com/Ahmad-Alsaleh/relbelief/issues
+Imports: 
+    magrittr

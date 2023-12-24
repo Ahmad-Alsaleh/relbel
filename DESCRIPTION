@@ -1,13 +1,13 @@
 Package: relbel
-Type: Package
-Title: What the Package Does (Title Case)
-Version: 0.1.0
-Author: Who wrote it
-Maintainer: The package maintainer <yourself@somewhere.net>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
-License: What license is it under?
+Title: Computes The Relative Belief Ratio, a k-sample Bayesian Test for Mean
+Version: 0.0.0.9000
+Authors@R: 
+    person("Ahmad", "Alsaleh", , "ahmed.asaleh2@gmail.com", role = c("aut", "cre"))
+Description: Computes The Relative Belief Ratio, a k-sample Bayesian Test for Mean.
+License: MIT + file LICENSE
 Encoding: UTF-8
-LazyData: true
-URL: https://github.com/Ahmad-Alsaleh/relbel
-BugReports: https://github.com/Ahmad-Alsaleh/relbel/issues
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.2.3
+Suggests: 
+    spelling
+Language: en-US

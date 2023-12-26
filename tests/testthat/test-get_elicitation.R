@@ -15,12 +15,12 @@ test_that("get_elicitation works", {
   expect_equal(actual_result, expected_result, tolerance = 1e-5)
 })
 
-test_that("get_single_alpha_beta_ works", {
+test_that("get_single_alpha_and_beta_ works", {
   alpha_beta <- c(2, 2)
   s_1_sq <- 4
   s_2_sq <- 64
 
-  actual_result <- get_single_alpha_beta_(alpha_beta, s_1_sq, s_2_sq)
+  actual_result <- get_single_alpha_and_beta_(alpha_beta, s_1_sq, s_2_sq)
   expected_result <- matrix(c(4.32261586, 0.01333706))
 
   expect_equal(actual_result, expected_result, tolerance = 1e-5)

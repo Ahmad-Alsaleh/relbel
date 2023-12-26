@@ -3,7 +3,7 @@ get_elicitation <- function(a, b, s_1, s_2) {
   lambda_0 <- (b - a) / (2 * s_2)
 
   alpha_beta <- newtons_method_(
-    f = get_single_alpha_beta_,
+    f = get_single_alpha_and_beta_,
     x_0 = matrix(c(2, 2)), s_1^2, s_2^2
   )
 
@@ -13,7 +13,7 @@ get_elicitation <- function(a, b, s_1, s_2) {
   ))
 }
 
-get_single_alpha_beta_ <- function(alpha_beta, s_1_sq, s_2_sq) {
+get_single_alpha_and_beta_ <- function(alpha_beta, s_1_sq, s_2_sq) {
   probability <- 0.9995
   alpha_0 <- alpha_beta[1]
   beta_0 <- alpha_beta[2]

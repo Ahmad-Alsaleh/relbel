@@ -9,9 +9,12 @@ Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.2.3
 Suggests: 
-    spelling
+    spelling,
+    testthat (>= 3.0.0)
 Language: en-US
 URL: https://github.com/Ahmad-Alsaleh/relbelief
 BugReports: https://github.com/Ahmad-Alsaleh/relbelief/issues
 Imports: 
-    magrittr
+    magrittr,
+    stats
+Config/testthat/edition: 3

@@ -2,6 +2,7 @@
 # relbel
 
 <!-- badges: start -->
+[![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-%23FE5196?logo=conventionalcommits&logoColor=white)](https://conventionalcommits.org)
 <!-- badges: end -->
 
 The goal of relbel is to ...

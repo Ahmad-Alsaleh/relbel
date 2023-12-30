@@ -4,7 +4,7 @@ Version: 0.0.0.9000
 Authors@R: 
     person("Ahmad", "Alsaleh", , "ahmed.asaleh2@gmail.com", role = c("aut", "cre"))
 Description: Computes The Relative Belief Ratio, a k-sample Bayesian Test for Mean.
-License: MIT + file LICENSE
+License: GPL (>= 3)
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.2.3

@@ -10,7 +10,8 @@ Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.2.3
 Suggests: 
     spelling,
-    testthat (>= 3.0.0)
+    testthat (>= 3.0.0),
+    withr
 Language: en-US
 URL: https://github.com/Ahmad-Alsaleh/relbelief
 BugReports: https://github.com/Ahmad-Alsaleh/relbelief/issues

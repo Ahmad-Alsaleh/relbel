@@ -12,8 +12,8 @@ Suggests:
     spelling,
     testthat (>= 3.0.0)
 Language: en-US
-URL: https://github.com/Ahmad-Alsaleh/relbelief
-BugReports: https://github.com/Ahmad-Alsaleh/relbelief/issues
+URL: https://github.com/Ahmad-Alsaleh/relbel
+BugReports: https://github.com/Ahmad-Alsaleh/relbel/issues
 Imports: 
     magrittr,
     stats

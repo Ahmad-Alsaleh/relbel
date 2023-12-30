@@ -1,4 +1,15 @@
-get_elicitation <- function(a, b, s_1, s_2) {
+#' Computes `mu_0`, `lambda_0`, `alpha_0`, `beta_0` using elicitation
+#' for a single feature.
+#' This function corresponds to part (i) of the algorithm in the paper.
+#'
+#' @param a (number)
+#' @param b (number)
+#' @param s_1 (number)
+#' @param s_2 (number)
+#'
+#' @return `list(mu_0, lambda_0, alpha_0, beta_0)`
+#'
+get_single_elicitation <- function(a, b, s_1, s_2) {
   mu_0 <- (a + b) / 2
   lambda_0 <- (b - a) / (2 * s_2)
 

@@ -1,10 +1,10 @@
-test_that("get_elicitation works", {
+test_that("get_single_elicitation works", {
   a <- 0
   b <- 14
   s_1 <- 2
   s_2 <- 8
 
-  actual_result <- get_elicitation(a, b, s_1, s_2)
+  actual_result <- get_single_elicitation(a, b, s_1, s_2)
   expected_result <- list(
     mu_0 = 7,
     lambda_0 = 0.875,

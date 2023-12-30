@@ -1,4 +1,4 @@
-test_that("get_single_elicitation works", {
+test_that("get_single_elicitation() works", {
   a <- 0
   b <- 14
   s_1 <- 2
@@ -15,7 +15,7 @@ test_that("get_single_elicitation works", {
   expect_equal(actual_result, expected_result, tolerance = 1e-5)
 })
 
-test_that("get_single_alpha_and_beta_ works", {
+test_that("get_single_alpha_and_beta_() works", {
   alpha_beta <- c(2, 2)
   s_1_sq <- 4
   s_2_sq <- 64
@@ -26,7 +26,7 @@ test_that("get_single_alpha_and_beta_ works", {
   expect_equal(actual_result, expected_result, tolerance = 1e-5)
 })
 
-test_that("newtons_method_ works", {
+test_that("newtons_method_() works", {
   f <- function(x, constant) {
     return(matrix(c(x[1]^2 + x[2]^2 - constant, x[1] - constant * x[2])))
   }

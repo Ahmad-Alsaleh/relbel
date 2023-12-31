@@ -62,7 +62,6 @@ newtons_method_ <- function(f, x_0, ...) {
     x <- x + delta
     iteration_i <- iteration_i + 1
   }
-  message("Number of iterations: ", iteration_i)
 
   return(x)
 }

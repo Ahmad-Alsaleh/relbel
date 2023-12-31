@@ -1,21 +1,24 @@
 Package: relbel
-Title: Computes The Relative Belief Ratio, a k-sample Bayesian Test for Mean
+Title: Computes The Relative Belief Ratio, a k-sample Bayesian Test for
+    Mean
 Version: 0.0.0.9000
+Date: 2023-12-24
 Authors@R: 
     person("Ahmad", "Alsaleh", , "ahmed.asaleh2@gmail.com", role = c("aut", "cre"))
-Description: Computes The Relative Belief Ratio, a k-sample Bayesian Test for Mean.
+Description: Computes The Relative Belief Ratio, a k-sample Bayesian Test
+    for Mean.
 License: GPL (>= 3)
-Encoding: UTF-8
-Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.2.3
-Suggests: 
-    spelling,
-    testthat (>= 3.0.0),
-    withr
-Language: en-US
 URL: https://github.com/Ahmad-Alsaleh/relbel
 BugReports: https://github.com/Ahmad-Alsaleh/relbel/issues
 Imports: 
     magrittr,
     stats
+Suggests: 
+    spelling,
+    testthat (>= 3.0.0),
+    withr
 Config/testthat/edition: 3
+Encoding: UTF-8
+Language: en-US
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.2.3

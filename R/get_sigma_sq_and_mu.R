@@ -94,7 +94,7 @@ get_single_sigma_sq_mu_post_ <- function(
   n <- length(feature)
   x_bar <- mean(feature)
 
-  beta_x <- beta_0 + (n - 1) * 0.5 * sd(feature)^2 +
+  beta_x <- beta_0 + (n - 1) * 0.5 * stats::sd(feature)^2 +
     0.5 * n * (x_bar - mu_0)^2 / (n * lambda_0^2 + 1)
 
   sigma_sq <- 1 / stats::rgamma(n = 1, shape = alpha_0 + 0.5 * n, rate = beta_x)

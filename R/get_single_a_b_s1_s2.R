@@ -5,7 +5,7 @@
 
 #' Calculate the confidence intervals of the mean and
 #' standard deviation for a given feature.
-#' This function corresponds to the part **"before"** part (i) of
+#' This function corresponds to the part "before" part (i) of
 #' the algorithm in the paper.
 #'
 #' @param feature (vector)

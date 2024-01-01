@@ -4,7 +4,7 @@
 \alias{get_single_a_b_s1_s2}
 \title{Calculate the confidence intervals of the mean and
 standard deviation for a given feature.
-This function corresponds to the part \strong{"before"} part (i) of
+This function corresponds to the part "before" part (i) of
 the algorithm in the paper.}
 \usage{
 get_single_a_b_s1_s2(feature, conf_level = 0.95)
@@ -22,6 +22,6 @@ of the standard deviation.
 \description{
 Calculate the confidence intervals of the mean and
 standard deviation for a given feature.
-This function corresponds to the part \strong{"before"} part (i) of
+This function corresponds to the part "before" part (i) of
 the algorithm in the paper.
 }

@@ -83,6 +83,7 @@ get_single_sigma_sq_mu_prior_ <- function(mu_0, lambda_0, alpha_0, beta_0) {
 #' @param lambda_0 (number)
 #' @param alpha_0 (number)
 #' @param beta_0 (number)
+#' @param feature (vector)
 #'
 #' @return `list(sigma_sq, mu)`
 #'

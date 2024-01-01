@@ -14,6 +14,8 @@ get_single_sigma_sq_mu_post_(mu_0, lambda_0, alpha_0, beta_0, feature)
 \item{alpha_0}{(number)}
 
 \item{beta_0}{(number)}
+
+\item{feature}{(vector)}
 }
 \value{
 \code{list(sigma_sq, mu)}

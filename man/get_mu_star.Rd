@@ -2,18 +2,27 @@
 % Please edit documentation in R/get_mu_star.R
 \name{get_mu_star}
 \alias{get_mu_star}
-\title{Computes \code{mu_star} # ! TODO: write this.}
+\title{Computes prior & posterior \code{mu_star}.}
 \usage{
 get_mu_star(features, sigma_sq_and_mu)
 }
 \arguments{
-\item{features}{foo}
+\item{features}{(list)}
 
-\item{sigma_sq_and_mu}{boo}
+\item{sigma_sq_and_mu}{(list with the following structure)
+
+\if{html}{\out{<div class="sourceCode">}}\preformatted{list(
+  sample1 = list(
+    sigma_sq = list(prior, post),
+    mu = list(prior, post)
+  ),
+  sample2 = ...
+)
+}\if{html}{\out{</div>}}}
 }
 \value{
-bar
+\code{list(prior, post)}
 }
 \description{
-Computes \code{mu_star} # ! TODO: write this.
+Computes prior & posterior \code{mu_star}.
 }

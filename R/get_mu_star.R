@@ -1,12 +1,19 @@
-#' Computes prior & posterior & `mu_star`.
+#' Computes prior & posterior `mu_star`.
 #'
 #' @param features (list)
-#' @param sigma_sq_and_mu ()
+#' @param sigma_sq_and_mu (list with the following structure)
+#' ```
+#' list(
+#'   sample1 = list(
+#'     sigma_sq = list(prior, post),
+#'     mu = list(prior, post)
+#'   ),
+#'   sample2 = ...
+#' )
+#' ```
 #'
-#' @return
-#' @export
+#' @return `list(prior, post)`
 #'
-#' @examples
 get_mu_star <- function(features, sigma_sq_and_mu) {
   numerator_and_denominator <- sapply(sigma_sq_and_mu, function(feature) {
     prior <- c(

@@ -21,14 +21,9 @@ get_divergence_distribution <- function(
     features,
     initialization_function
   )
-  divergences <- replicate(repetition, {
+  replicate(repetition, {
     get_divergence_(features, mu_0_lambda_0_alpha_0_beta_0)
   })
-  divergences
-
-  # ! continue from here: complete this function.
-  # ! continue from after the loop in the example 3. (you need to start with the last part in the paper) # nolint
-  # ! take a look at the relbel-bu code that I wrote long time ago.
 }
 
 

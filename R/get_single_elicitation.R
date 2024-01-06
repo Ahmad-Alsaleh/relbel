@@ -29,6 +29,7 @@ get_single_alpha_and_beta_ <- function(alpha_beta, s_1_sq, s_2_sq) {
   alpha_0 <- alpha_beta[1]
   beta_0 <- alpha_beta[2]
 
+  # TODO: ask the prof, why s_1_sq and s_2_sq are squared (that's not the case in the paper) # nolint
   result <- matrix(nrow = 2, ncol = 1)
   result[1] <- stats::qgamma(probability, alpha_0, beta_0) - (stats::qnorm(probability) / s_1_sq)^2 # nolint: line_length_linter.
   result[2] <- stats::qgamma(1 - probability, alpha_0, beta_0) - (stats::qnorm(probability) / s_2_sq)^2 # nolint: line_length_linter.

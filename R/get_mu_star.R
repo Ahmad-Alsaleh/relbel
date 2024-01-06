@@ -1,7 +1,11 @@
 #' Computes prior & posterior `mu_star`.
 #'
+#'
 #' @param features (list)
-#' @param sigma_sq_and_mu (list with the following structure)
+#' ```
+#' list(sample1 = c(1, 2, 3), sample2 = c(4, 5, 6), ...)
+#' ```
+#' @param sigma_sq_and_mu (list)
 #' ```
 #' list(
 #'   sample1 = list(

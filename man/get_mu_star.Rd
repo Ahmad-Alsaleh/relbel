@@ -7,9 +7,12 @@
 get_mu_star(features, sigma_sq_and_mu)
 }
 \arguments{
-\item{features}{(list)}
+\item{features}{(list)
 
-\item{sigma_sq_and_mu}{(list with the following structure)
+\if{html}{\out{<div class="sourceCode">}}\preformatted{list(sample1 = c(1, 2, 3), sample2 = c(4, 5, 6), ...)
+}\if{html}{\out{</div>}}}
+
+\item{sigma_sq_and_mu}{(list)
 
 \if{html}{\out{<div class="sourceCode">}}\preformatted{list(
   sample1 = list(

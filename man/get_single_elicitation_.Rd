@@ -2,9 +2,9 @@
 % Please edit documentation in R/get_all_elicitation.R
 \name{get_single_elicitation_}
 \alias{get_single_elicitation_}
-\title{Computes \code{mu_0}, \code{lambda_0}, \code{alpha_0}, \code{beta_0} using elicitation
-for a single feature.
-This function corresponds to part (i) of the algorithm in the paper.}
+\title{Computes \code{mu_0}, \code{lambda_0}, \code{alpha_0}, \code{beta_0} using elicitation for a
+single feature. This function corresponds to part (i) of the algorithm in the
+paper.}
 \usage{
 get_single_elicitation_(a, b, s_1, s_2)
 }
@@ -21,7 +21,7 @@ get_single_elicitation_(a, b, s_1, s_2)
 \code{list(mu_0, lambda_0, alpha_0, beta_0)}
 }
 \description{
-Computes \code{mu_0}, \code{lambda_0}, \code{alpha_0}, \code{beta_0} using elicitation
-for a single feature.
-This function corresponds to part (i) of the algorithm in the paper.
+Computes \code{mu_0}, \code{lambda_0}, \code{alpha_0}, \code{beta_0} using elicitation for a
+single feature. This function corresponds to part (i) of the algorithm in the
+paper.
 }

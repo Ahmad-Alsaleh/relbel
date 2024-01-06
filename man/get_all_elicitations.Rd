@@ -14,9 +14,7 @@ get_all_elicitations(features, initialization_function = NULL)
 \if{html}{\out{<div class="sourceCode">}}\preformatted{list(sample1 = c(1, 2, 3), sample2 = c(4, 5, 6), ...)
 }\if{html}{\out{</div>}}}
 
-\item{initialization_function}{(function)
-should return \code{list(a, b, s_1, s_2)}
-Default: \code{get_single_a_b_s1_s2()}.}
+\item{initialization_function}{(function) should return \code{list(a, b, s_1, s_2)} Default: \code{get_single_a_b_s1_s2()}.}
 }
 \value{
 \if{html}{\out{<div class="sourceCode">}}\preformatted{list(

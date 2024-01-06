@@ -2,8 +2,8 @@
 % Please edit documentation in R/get_all_sigma_sq_and_mu.R
 \name{get_all_sigma_sq_and_mu}
 \alias{get_all_sigma_sq_and_mu}
-\title{Computes prior & posterior \code{sigma_sq} and \code{mu} for all features.
-This function corresponds to parts (ii) & (v) of the algorithm in the paper.}
+\title{Computes prior & posterior \code{sigma_sq} and \code{mu} for all features. This
+function corresponds to parts (ii) & (v) of the algorithm in the paper.}
 \usage{
 get_all_sigma_sq_and_mu(features, mu_0_lambda_0_alpha_0_beta_0)
 }
@@ -32,6 +32,6 @@ get_all_sigma_sq_and_mu(features, mu_0_lambda_0_alpha_0_beta_0)
 }\if{html}{\out{</div>}}
 }
 \description{
-Computes prior & posterior \code{sigma_sq} and \code{mu} for all features.
-This function corresponds to parts (ii) & (v) of the algorithm in the paper.
+Computes prior & posterior \code{sigma_sq} and \code{mu} for all features. This
+function corresponds to parts (ii) & (v) of the algorithm in the paper.
 }

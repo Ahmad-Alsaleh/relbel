@@ -1,5 +1,5 @@
-#' Computes prior & posterior `sigma_sq` and `mu` for all features.
-#' This function corresponds to parts (ii) & (v) of the algorithm in the paper.
+#' Computes prior & posterior `sigma_sq` and `mu` for all features. This
+#' function corresponds to parts (ii) & (v) of the algorithm in the paper.
 #'
 #' @param features (list)
 #' ```

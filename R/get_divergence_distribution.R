@@ -1,19 +1,17 @@
-#' Computes a distribution of the prior & posterior KL divergence values.
-#' This function corresponds to parts (iii) & (vi) of the algorithm in the paper
+#' Computes a distribution of the prior & posterior KL divergence values. This
+#' function corresponds to parts (iii) & (vi) of the algorithm in the paper
 #'
 #' @param features (list)
 #' ```
 #' list(sample1 = c(1, 2, 3), sample2 = c(4, 5, 6), ...)
 #' ```
-#' @param initialization_function (function)
-#' should return `list(a, b, s_1, s_2)`
-#' Default: `get_single_a_b_s1_s2()`.
-#' @param repetition (integer)
-#' number of times to repeat the computation
-#' (i.e.: number of samples in the distribution)
+#' @param initialization_function (function) should return `list(a, b, s_1,
+#'   s_2)` Default: `get_single_a_b_s1_s2()`.
+#' @param repetition (integer) number of times to repeat the computation (i.e.:
+#'   number of samples in the distribution)
 #'
-#' @return matrix of size `length(features)` x `repetition`
-#' each row corresponds to a feature
+#' @return matrix with size 2 x `repetition`. First row is the prior
+#'   distribution, second row is the posterior distribution.
 #'
 get_divergence_distribution <- function(
     features, initialization_function = NULL, repetition = 5000) {
@@ -68,9 +66,3 @@ get_divergence_ <- function(features, mu_0_lambda_0_alpha_0_beta_0) {
     post = post_divergence
   ))
 }
-# todo: run document()
-# todo: rename this file
-
-###
-# initialization_function <- function(feature) list(a = 0, b = 2, s_1 = 2, s_2 = 4) # nolint
-###

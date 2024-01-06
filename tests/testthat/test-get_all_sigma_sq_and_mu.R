@@ -6,11 +6,24 @@ test_that("get_all_sigma_sq_and_mu() works", {
     ),
     sample2 = c(0.78, 0.71, 0.98, 0.68, 1.00, 1.10, 0.78, 1.10)
   )
-  initialization_function <- function(feature) {
-    list(a = 0, b = 2, s_1 = 2, s_2 = 4)
-  }
+
+  mu_0_lambda_0_alpha_0_beta_0 <- list(
+    sample1 = list(
+      mu_0 = 1,
+      lambda_0 = 0.25,
+      alpha_0 = 6.454639,
+      beta_0 = 26.84146
+    ),
+    sample2 = list(
+      mu_0 = 1,
+      lambda_0 = 0.25,
+      alpha_0 = 6.454639,
+      beta_0 = 26.84146
+    )
+  )
+
   actual_result <- withr::with_seed(42, {
-    get_all_sigma_sq_and_mu(features, initialization_function)
+    get_all_sigma_sq_and_mu(features, mu_0_lambda_0_alpha_0_beta_0)
   })
 
   expected_result <- list(

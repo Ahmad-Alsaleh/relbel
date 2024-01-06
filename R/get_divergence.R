@@ -1,17 +1,72 @@
-#' Computes the prior & posterior KL divergence values.
+#' Computes a distribution of the prior & posterior KL divergence values.
 #' This function corresponds to parts (iii) & (vi) of the algorithm in the paper
 #'
 #' @param features (list)
-#' @param initialization_function (function) returns `list(a, b, s_1, s_2)`.
+#' ```
+#' list(sample1 = c(1, 2, 3), sample2 = c(4, 5, 6), ...)
+#' ```
+#' @param initialization_function (function)
+#' should return `list(a, b, s_1, s_2)`
 #' Default: `get_single_a_b_s1_s2()`.
+#' @param repetition (integer)
+#' number of times to repeat the computation
+#' (i.e.: number of samples in the distribution)
 #'
-#' @return `list(prior, post)`
+#' @return matrix of size `length(features)` x `repetition`
+#' each row corresponds to a feature
 #'
-get_divergence <- function(features, initialization_function = NULL) {
-  sigma_sq_and_mu <- get_all_sigma_sq_and_mu(features, initialization_function)
+get_divergence_distribution <- function(
+    features, initialization_function = NULL, repetition = 5000) {
+  # todo: put the following if statement and lapply in get_all_elicitation()
+  # TODO: after fixing get_single_a_b_s1_s2(), consider removing this if-else and just using get_single_a_b_s1_s2(feature) # nolint: line_length_linter.
+  if (is.null(initialization_function)) {
+    initialization_function <- get_single_a_b_s1_s2
+  }
+  mu_0_lambda_0_alpha_0_beta_0 <- lapply(features, function(feature) {
+    a_b_s1_s2 <- initialization_function(feature)
+    get_single_elicitation(
+      a_b_s1_s2$a,
+      a_b_s1_s2$b,
+      a_b_s1_s2$s_1,
+      a_b_s1_s2$s_2
+    )
+  })
+
+  divergences <- replicate(repetition, {
+    get_divergence_(features, mu_0_lambda_0_alpha_0_beta_0)
+  })
+  divergences
+
+  # ! continue from here: complete this function.
+  # ! continue from after the loop in the example 3. (you need to start with the last part in the paper) # nolint
+  # ! take a look at the relbel-bu code that I wrote long time ago.
+}
+
+
+#' Computes the prior & posterior KL divergence values.
+#'
+#' @param mu_0_lambda_0_alpha_0_beta_0 (list)
+#' ```
+#' list(
+#'   sample1 = list(mu_0, lambda_0, alpha_0, beta_0),
+#'   sample2 = ...
+#' )
+#' ```
+#' @param features (list)
+#' ```
+#' list(sample1 = c(1, 2, 3), sample2 = c(4, 5, 6), ...)
+#' ```
+#'
+#' @return `c(prior, post)`
+#'
+get_divergence_ <- function(features, mu_0_lambda_0_alpha_0_beta_0) {
+  sigma_sq_and_mu <- get_all_sigma_sq_and_mu(
+    features,
+    mu_0_lambda_0_alpha_0_beta_0
+  )
   mu_star <- get_mu_star(features, sigma_sq_and_mu)
 
-  prior_and_post <- sapply(sigma_sq_and_mu, function(feature) {
+  prior_and_post_divergence <- sapply(sigma_sq_and_mu, function(feature) {
     prior <- (mu_star$prior - feature$mu$prior)^2 / feature$sigma_sq$prior
     post <- (mu_star$post - feature$mu$post)^2 / feature$sigma_sq$post
     return(c(
@@ -20,12 +75,18 @@ get_divergence <- function(features, initialization_function = NULL) {
     ))
   })
 
-  prior <- 0.5 * sum(prior_and_post["prior", ])
-  post <- 0.5 * sum(prior_and_post["post", ])
+  prior_divergence <- 0.5 * sum(prior_and_post_divergence["prior", ])
+  post_divergence <- 0.5 * sum(prior_and_post_divergence["post", ])
 
 
-  return(list(
-    prior = prior,
-    post = post
+  return(c(
+    prior = prior_divergence,
+    post = post_divergence
   ))
 }
+# todo: run document()
+# todo: rename this file
+
+###
+# initialization_function <- function(feature) list(a = 0, b = 2, s_1 = 2, s_2 = 4) # nolint
+###

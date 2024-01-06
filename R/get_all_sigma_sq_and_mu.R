@@ -2,9 +2,16 @@
 #' This function corresponds to parts (ii) & (v) of the algorithm in the paper.
 #'
 #' @param features (list)
-#' @param initialization_function (function) returns `list(a, b, s_1, s_2)`.
-#' Default: `get_single_a_b_s1_s2()`.
-#'
+#' ```
+#' list(sample1 = c(1, 2, 3), sample2 = c(4, 5, 6), ...)
+#' ```
+#' @param mu_0_lambda_0_alpha_0_beta_0 (list)
+#' ```
+#' list(
+#'   sample1 = list(mu_0, lambda_0, alpha_0, beta_0),
+#'   sample2 = ...
+#' )
+#' ```
 #' @return
 #' ```
 #' list(
@@ -16,34 +23,20 @@
 #' )
 #' ```
 #'
-get_all_sigma_sq_and_mu <- function(features, initialization_function = NULL) {
-  # TODO: after fixing get_single_a_b_s1_s2(), consider removing this if-else and just using get_single_a_b_s1_s2(feature) # nolint: line_length_linter.
-  if (is.null(initialization_function)) {
-    initialization_function <- get_single_a_b_s1_s2
-  }
-
-  lapply(features, function(feature) {
-    a_b_s1_s2 <- initialization_function(feature)
-
-    mu_0_lambda_0_alpha_0_beta_0 <- get_single_elicitation(
-      a_b_s1_s2$a,
-      a_b_s1_s2$b,
-      a_b_s1_s2$s_1,
-      a_b_s1_s2$s_2
-    )
-
+get_all_sigma_sq_and_mu <- function(features, mu_0_lambda_0_alpha_0_beta_0) {
+  mapply(function(feature, single_mu_0_lambda_0_alpha_0_beta_0) { # nolint
     sigma_sq_and_mu_prior <- get_single_sigma_sq_mu_prior_(
-      mu_0_lambda_0_alpha_0_beta_0$mu_0,
-      mu_0_lambda_0_alpha_0_beta_0$lambda_0,
-      mu_0_lambda_0_alpha_0_beta_0$alpha_0,
-      mu_0_lambda_0_alpha_0_beta_0$beta_0
+      single_mu_0_lambda_0_alpha_0_beta_0$mu_0,
+      single_mu_0_lambda_0_alpha_0_beta_0$lambda_0,
+      single_mu_0_lambda_0_alpha_0_beta_0$alpha_0,
+      single_mu_0_lambda_0_alpha_0_beta_0$beta_0
     )
 
     sigma_sq_and_mu_post <- get_single_sigma_sq_mu_post_(
-      mu_0_lambda_0_alpha_0_beta_0$mu_0,
-      mu_0_lambda_0_alpha_0_beta_0$lambda_0,
-      mu_0_lambda_0_alpha_0_beta_0$alpha_0,
-      mu_0_lambda_0_alpha_0_beta_0$beta_0,
+      single_mu_0_lambda_0_alpha_0_beta_0$mu_0,
+      single_mu_0_lambda_0_alpha_0_beta_0$lambda_0,
+      single_mu_0_lambda_0_alpha_0_beta_0$alpha_0,
+      single_mu_0_lambda_0_alpha_0_beta_0$beta_0,
       feature
     )
 
@@ -57,10 +50,10 @@ get_all_sigma_sq_and_mu <- function(features, initialization_function = NULL) {
         post = sigma_sq_and_mu_post$mu
       )
     ))
-  })
+  }, features, mu_0_lambda_0_alpha_0_beta_0, SIMPLIFY = FALSE)
 }
 
-#' Computes **_prior_** `sigma_sq` and `mu` for a single feature.
+#' Computes "prior" `sigma_sq` and `mu` for a single feature.
 #'
 #' @param mu_0 (number)
 #' @param lambda_0 (number)
@@ -77,7 +70,7 @@ get_single_sigma_sq_mu_prior_ <- function(mu_0, lambda_0, alpha_0, beta_0) {
 }
 
 
-#' Computes **_posterior_** `sigma_sq` and `mu` for a single feature.
+#' Computes "posterior" `sigma_sq` and `mu` for a single feature.
 #'
 #' @param mu_0 (number)
 #' @param lambda_0 (number)

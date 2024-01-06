@@ -17,21 +17,10 @@
 #'
 get_divergence_distribution <- function(
     features, initialization_function = NULL, repetition = 5000) {
-  # todo: put the following if statement and lapply in get_all_elicitation()
-  # TODO: after fixing get_single_a_b_s1_s2(), consider removing this if-else and just using get_single_a_b_s1_s2(feature) # nolint: line_length_linter.
-  if (is.null(initialization_function)) {
-    initialization_function <- get_single_a_b_s1_s2
-  }
-  mu_0_lambda_0_alpha_0_beta_0 <- lapply(features, function(feature) {
-    a_b_s1_s2 <- initialization_function(feature)
-    get_single_elicitation(
-      a_b_s1_s2$a,
-      a_b_s1_s2$b,
-      a_b_s1_s2$s_1,
-      a_b_s1_s2$s_2
-    )
-  })
-
+  mu_0_lambda_0_alpha_0_beta_0 <- get_all_elicitations(
+    features,
+    initialization_function
+  )
   divergences <- replicate(repetition, {
     get_divergence_(features, mu_0_lambda_0_alpha_0_beta_0)
   })

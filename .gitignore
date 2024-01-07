@@ -4,6 +4,7 @@
 node_modules/
 package-lock.json
 package.json
+TODO.md
 
 ### The following part is obtained from GitHub’s R.gitignore templates
 

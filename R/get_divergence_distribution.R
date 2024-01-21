@@ -14,7 +14,7 @@
 #'   distribution, second row is the posterior distribution.
 #'
 get_divergence_distribution <- function(
-    features, initialization_function = NULL, repetition = 5000) {
+    features, initialization_function, repetition) {
   mu_0_lambda_0_alpha_0_beta_0 <- get_all_elicitations(
     features,
     initialization_function

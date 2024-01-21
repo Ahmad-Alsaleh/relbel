@@ -16,12 +16,7 @@
 #'   sample2 = ...
 #' )
 #' ```
-get_all_elicitations <- function(features, initialization_function = NULL) {
-  # todo: after fixing get_single_a_b_s1_s2(), consider removing this if-else...
-  # ...and just using get_single_a_b_s1_s2(feature)
-  if (is.null(initialization_function)) {
-    initialization_function <- get_single_a_b_s1_s2
-  }
+get_all_elicitations <- function(features, initialization_function) {
   lapply(features, function(feature) {
     a_b_s1_s2 <- initialization_function(feature)
     get_single_elicitation_(

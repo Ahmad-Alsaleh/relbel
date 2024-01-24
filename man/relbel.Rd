@@ -2,7 +2,7 @@
 % Please edit documentation in R/relbel.R
 \name{relbel}
 \alias{relbel}
-\title{Compute Relative Belief Ratio (RB) Score.}
+\title{Compute Relative Belief Ratio (RB) Score}
 \usage{
 relbel(
   x,
@@ -14,11 +14,12 @@ relbel(
 )
 }
 \arguments{
-\item{x}{a numeric vector or matrix; the feature(s).}
+\item{x}{a numeric vector matrix, or data frame; the feature(s).}
 
 \item{y}{a}
 
-\item{initialization_function}{A function used for initializating the main and standard deviation. See 'Details' for more information.}
+\item{initialization_function}{A function used for initializing the mean
+and standard deviation. See 'Details' for more information.}
 
 \item{repetition}{The number of repetitions.}
 

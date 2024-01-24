@@ -6,7 +6,7 @@
 features. This function corresponds to part (i) of the algorithm in the
 paper.}
 \usage{
-get_all_elicitations(features, initialization_function = NULL)
+get_all_elicitations(features, initialization_function)
 }
 \arguments{
 \item{features}{(list)

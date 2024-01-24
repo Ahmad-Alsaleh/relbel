@@ -5,11 +5,7 @@
 \title{Computes a distribution of the prior & posterior KL divergence values. This
 function corresponds to parts (iii) & (vi) of the algorithm in the paper}
 \usage{
-get_divergence_distribution(
-  features,
-  initialization_function = NULL,
-  repetition = 5000
-)
+get_divergence_distribution(features, initialization_function, repetition)
 }
 \arguments{
 \item{features}{(list)

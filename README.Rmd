@@ -28,7 +28,7 @@ knitr::opts_chunk$set(
 You can install the development version of relbel from [GitHub](https://github.com/) with:
 
 ``` r
-# install.packages("devtools")
+install.packages("devtools")
 devtools::install_github("Ahmad-Alsaleh/relbel")
 ```
 
@@ -40,21 +40,21 @@ This is a basic example which shows you how to solve a common problem:
 
 ```{r example}
 library(relbel)
-## basic example code
+initialization_function <- function(feature) {
+  list(a = 0, b = 2, s_1 = 2, s_2 = 4)
+}
+repetition <- 5000
+L <- 20
+i_0 <- 1
+
+dataset <- data.frame(
+  x1 = c(-0.8606568, 1.4141698, 0.2235239, -1.1968656, 0.7677741),
+  x2 = c(-0.318, -0.712, -1.320, -0.008, 0.048),
+  y = c("A", "B", "A", "B", "B")
+)
+
+relbel(
+  dataset[1:2], dataset["y"],
+  initialization_function, repetition, L, i_0
+)
 ```
-
-What is special about using `README.Rmd` instead of just `README.md`? You can include R chunks like so:
-
-```{r cars}
-summary(cars)
-```
-
-You'll still need to render `README.Rmd` regularly, to keep `README.md` up-to-date. `devtools::build_readme()` is handy for this.
-
-You can also embed plots, for example:
-
-```{r pressure, echo = FALSE}
-# plot(pressure)
-```
-
-In that case, don't forget to commit and push the resulting figure files, so they display on GitHub and CRAN.

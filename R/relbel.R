@@ -46,7 +46,6 @@ relbel <- function(
   x <- as.data.frame(x)
   y <- as.data.frame(y)
 
-
   check_arguments_(x, y, initialization_function, repetition, L, i_0)
 
   # todo: after fixing get_single_a_b_s1_s2(), consider removing this if-else...

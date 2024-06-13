@@ -25,8 +25,6 @@ test_that("relbel() works", {
     )
   )
 
-  # todo: check if y is dataset[, "y"] or dataset["y"]
-
   actual_result <- withr::with_seed(42, {
     relbel(
       dataset[1:2], dataset["y"],

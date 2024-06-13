@@ -27,10 +27,6 @@ devtools::install_github("Ahmad-Alsaleh/relbel")
 
 ## Example
 
-# TODO: write an example and remove this…
-
-This is a basic example which shows you how to solve a common problem:
-
 ``` r
 library(relbel)
 initialization_function <- function(feature) {

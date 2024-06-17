@@ -1,21 +1,21 @@
-#' Computes `mu_0`, `lambda_0`, `alpha_0`, `beta_0` using elicitation for a all
-#' features. This function corresponds to part (i) of the algorithm in the
-#' paper.
-#'
-#' @param features (list)
-#' ```
-#' list(sample1 = c(1, 2, 3), sample2 = c(4, 5, 6), ...)
-#' ```
-#' @param initialization_function (function) should return `list(a, b, s_1,
-#'   s_2)` Default: `get_single_a_b_s1_s2()`.
-#'
-#' @return
-#' ```
-#' list(
-#'   sample1 = list(mu_0, lambda_0, alpha_0, beta_0),
-#'   sample2 = ...
-#' )
-#' ```
+# Computes `mu_0`, `lambda_0`, `alpha_0`, `beta_0` using elicitation for a all
+# features. This function corresponds to part (i) of the algorithm in the
+# paper.
+#
+# @param features (list)
+# ```
+# list(sample1 = c(1, 2, 3), sample2 = c(4, 5, 6), ...)
+# ```
+# @param initialization_function (function) should return `list(a, b, s_1,
+#   s_2)` Default: `get_single_a_b_s1_s2()`.
+#
+# @return
+# ```
+# list(
+#   sample1 = list(mu_0, lambda_0, alpha_0, beta_0),
+#   sample2 = ...
+# )
+# ```
 get_all_elicitations <- function(features, initialization_function) {
   lapply(features, function(feature) {
     a_b_s1_s2 <- initialization_function(feature)
@@ -28,17 +28,17 @@ get_all_elicitations <- function(features, initialization_function) {
   })
 }
 
-#' Computes `mu_0`, `lambda_0`, `alpha_0`, `beta_0` using elicitation for a
-#' single feature. This function corresponds to part (i) of the algorithm in the
-#' paper.
-#'
-#' @param a (number)
-#' @param b (number)
-#' @param s_1 (number)
-#' @param s_2 (number)
-#'
-#' @return `list(mu_0, lambda_0, alpha_0, beta_0)`
-#'
+# Computes `mu_0`, `lambda_0`, `alpha_0`, `beta_0` using elicitation for a
+# single feature. This function corresponds to part (i) of the algorithm in the
+# paper.
+#
+# @param a (number)
+# @param b (number)
+# @param s_1 (number)
+# @param s_2 (number)
+#
+# @return `list(mu_0, lambda_0, alpha_0, beta_0)`
+#
 get_single_elicitation_ <- function(a, b, s_1, s_2) {
   mu_0 <- (a + b) / 2
   lambda_0 <- (b - a) / (2 * s_2)

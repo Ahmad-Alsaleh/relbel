@@ -1,28 +1,28 @@
-#' Computes prior & posterior `sigma_sq` and `mu` for all features. This
-#' function corresponds to parts (ii) & (v) of the algorithm in the paper.
-#'
-#' @param features (list)
-#' ```
-#' list(sample1 = c(1, 2, 3), sample2 = c(4, 5, 6), ...)
-#' ```
-#' @param mu_0_lambda_0_alpha_0_beta_0 (list)
-#' ```
-#' list(
-#'   sample1 = list(mu_0, lambda_0, alpha_0, beta_0),
-#'   sample2 = ...
-#' )
-#' ```
-#' @return
-#' ```
-#' list(
-#'   sample1 = list(
-#'     sigma_sq = list(prior, post),
-#'     mu = list(prior, post)
-#'   ),
-#'   sample2 = ...
-#' )
-#' ```
-#'
+# Computes prior & posterior `sigma_sq` and `mu` for all features. This
+# function corresponds to parts (ii) & (v) of the algorithm in the paper.
+#
+# @param features (list)
+# ```
+# list(sample1 = c(1, 2, 3), sample2 = c(4, 5, 6), ...)
+# ```
+# @param mu_0_lambda_0_alpha_0_beta_0 (list)
+# ```
+# list(
+#   sample1 = list(mu_0, lambda_0, alpha_0, beta_0),
+#   sample2 = ...
+# )
+# ```
+# @return
+# ```
+# list(
+#   sample1 = list(
+#     sigma_sq = list(prior, post),
+#     mu = list(prior, post)
+#   ),
+#   sample2 = ...
+# )
+# ```
+#
 get_all_sigma_sq_and_mu <- function(features, mu_0_lambda_0_alpha_0_beta_0) {
   mapply(function(feature, single_mu_0_lambda_0_alpha_0_beta_0) { # nolint
     sigma_sq_and_mu_prior <- get_single_sigma_sq_mu_prior_(
@@ -53,15 +53,15 @@ get_all_sigma_sq_and_mu <- function(features, mu_0_lambda_0_alpha_0_beta_0) {
   }, features, mu_0_lambda_0_alpha_0_beta_0, SIMPLIFY = FALSE)
 }
 
-#' Computes "prior" `sigma_sq` and `mu` for a single feature.
-#'
-#' @param mu_0 (number)
-#' @param lambda_0 (number)
-#' @param alpha_0 (number)
-#' @param beta_0 (number)
-#'
-#' @return `list(sigma_sq, mu)`
-#'
+# Computes "prior" `sigma_sq` and `mu` for a single feature.
+#
+# @param mu_0 (number)
+# @param lambda_0 (number)
+# @param alpha_0 (number)
+# @param beta_0 (number)
+#
+# @return `list(sigma_sq, mu)`
+#
 get_single_sigma_sq_mu_prior_ <- function(mu_0, lambda_0, alpha_0, beta_0) {
   sigma_sq <- 1 / stats::rgamma(n = 1, shape = alpha_0, rate = beta_0)
   mu <- stats::rnorm(n = 1, mean = mu_0, sd = lambda_0 * sqrt(sigma_sq))
@@ -70,16 +70,16 @@ get_single_sigma_sq_mu_prior_ <- function(mu_0, lambda_0, alpha_0, beta_0) {
 }
 
 
-#' Computes "posterior" `sigma_sq` and `mu` for a single feature.
-#'
-#' @param mu_0 (number)
-#' @param lambda_0 (number)
-#' @param alpha_0 (number)
-#' @param beta_0 (number)
-#' @param feature (vector)
-#'
-#' @return `list(sigma_sq, mu)`
-#'
+# Computes "posterior" `sigma_sq` and `mu` for a single feature.
+#
+# @param mu_0 (number)
+# @param lambda_0 (number)
+# @param alpha_0 (number)
+# @param beta_0 (number)
+# @param feature (vector)
+#
+# @return `list(sigma_sq, mu)`
+#
 get_single_sigma_sq_mu_post_ <- function(
     mu_0, lambda_0,
     alpha_0, beta_0,

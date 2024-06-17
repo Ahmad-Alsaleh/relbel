@@ -1,18 +1,18 @@
-#' Computes a distribution of the prior & posterior KL divergence values. This
-#' function corresponds to parts (iii) & (vi) of the algorithm in the paper
-#'
-#' @param features (list)
-#' ```
-#' list(sample1 = c(1, 2, 3), sample2 = c(4, 5, 6), ...)
-#' ```
-#' @param initialization_function (function) should return `list(a, b, s_1,
-#'   s_2)` Default: `get_single_a_b_s1_s2()`.
-#' @param repetition (integer) number of times to repeat the computation (i.e.:
-#'   number of samples in the distribution)
-#'
-#' @return matrix with size 2 x `repetition`. First row is the prior
-#'   distribution, second row is the posterior distribution.
-#'
+# Computes a distribution of the prior & posterior KL divergence values. This
+# function corresponds to parts (iii) & (vi) of the algorithm in the paper
+#
+# @param features (list)
+# ```
+# list(sample1 = c(1, 2, 3), sample2 = c(4, 5, 6), ...)
+# ```
+# @param initialization_function (function) should return `list(a, b, s_1,
+#   s_2)` Default: `get_single_a_b_s1_s2()`.
+# @param repetition (integer) number of times to repeat the computation (i.e.:
+#   number of samples in the distribution)
+#
+# @return matrix with size 2 x `repetition`. First row is the prior
+#   distribution, second row is the posterior distribution.
+#
 get_divergence_distribution <- function(
     features, initialization_function, repetition) {
   mu_0_lambda_0_alpha_0_beta_0 <- get_all_elicitations(
@@ -25,22 +25,22 @@ get_divergence_distribution <- function(
 }
 
 
-#' Computes the prior & posterior KL divergence values.
-#'
-#' @param mu_0_lambda_0_alpha_0_beta_0 (list)
-#' ```
-#' list(
-#'   sample1 = list(mu_0, lambda_0, alpha_0, beta_0),
-#'   sample2 = ...
-#' )
-#' ```
-#' @param features (list)
-#' ```
-#' list(sample1 = c(1, 2, 3), sample2 = c(4, 5, 6), ...)
-#' ```
-#'
-#' @return `c(prior, post)`
-#'
+# Computes the prior & posterior KL divergence values.
+#
+# @param mu_0_lambda_0_alpha_0_beta_0 (list)
+# ```
+# list(
+#   sample1 = list(mu_0, lambda_0, alpha_0, beta_0),
+#   sample2 = ...
+# )
+# ```
+# @param features (list)
+# ```
+# list(sample1 = c(1, 2, 3), sample2 = c(4, 5, 6), ...)
+# ```
+#
+# @return `c(prior, post)`
+#
 get_divergence_ <- function(features, mu_0_lambda_0_alpha_0_beta_0) {
   sigma_sq_and_mu <- get_all_sigma_sq_and_mu(
     features,

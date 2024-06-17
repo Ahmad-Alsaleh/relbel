@@ -54,9 +54,6 @@ relbel(
 )
 
 }
-\references{
-TODO:
-}
 \author{
 Ahmad Alsaleh
 }

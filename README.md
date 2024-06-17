@@ -46,7 +46,7 @@ relbel(
   dataset[1:2], dataset["y"],
   initialization_function, repetition, L, i_0
 )
-#>             x1     x2
-#> relbel   1.224 1.0480
-#> strength 1.000 0.7224
+#>              x1     x2
+#> relbel   1.0120 1.0200
+#> strength 0.5666 0.5612
 ```

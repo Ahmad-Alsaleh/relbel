@@ -1,8 +1,3 @@
-#
-# ! TODO: ask the prof how to initialize the parameters a, b, s_1, s_2.
-# ! t.test and chi2 are making the newton's method fail, ig cuz the ci is
-# ! very narrow, even for conf_level = 0.99
-
 #' Calculate the confidence intervals of the mean and standard deviation for a
 #' given feature. This function corresponds to the part "before" part (i) of the
 #' algorithm in the paper.

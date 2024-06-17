@@ -15,7 +15,6 @@
 #' @param L The value of L.
 #' @param i_0 The value of i_0.
 #' @param y a
-#' @references TODO:
 #' @return The computed relative belief ratio.
 #' @export
 #'
@@ -63,16 +62,13 @@ relbel <- function(
 # Computes the relative belief ratio and strength of evidence for a given set
 # of features.
 #
-# `@param` features (list)
-# ```
-# list(sample1 = c(1, 2, 3), sample2 = c(4, 5, 6), ...)
-# ```
-# `@param` initialization_function (function) should return `list(a, b, s_1,
-#   s_2)` Default: `get_single_a_b_s1_s2()`.
-# `@param` repetition (integer) number of times to repeat the computation (i.e.:
-#   number of samples in the distribution)
-# `@param` L (integer)
-# `@param` i_0 (integer)
+# @param features (list) `list(sample1 = c(1, 2), sample2 = c(3, 4), ...)`
+# @param initialization_function (function) should return
+# `list(a, b, s_1, s_2)` Default: `get_single_a_b_s1_s2()`.
+# @param repetition (integer) number of times to repeat the computation
+# (i.e.: number of samples in the distribution)
+# @param L (integer)
+# @param i_0 (integer)
 # #
 # @return `list(relbel, strength)`
 #

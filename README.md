@@ -10,7 +10,8 @@ Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-%23FE5196?log
 [![License: GPL
 v3](https://img.shields.io/badge/License-GPL_v3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 [![R-CMD-check](https://github.com/Ahmad-Alsaleh/relbel/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/Ahmad-Alsaleh/relbel/actions/workflows/R-CMD-check.yaml)
-
+[![Lifecycle:
+stable](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://lifecycle.r-lib.org/articles/stages.html#stable)
 <!-- badges: end -->
 
 `relbel` computes the Relative Belief Ratio, a k-sample Bayesian Test
@@ -30,6 +31,8 @@ devtools::install_github("Ahmad-Alsaleh/relbel")
 
 ``` r
 library(relbel)
+set.seed(42)
+
 initialization_function <- function(feature) {
   list(a = 0, b = 2, s_1 = 2, s_2 = 4)
 }
@@ -47,7 +50,7 @@ relbel(
   dataset[1:2], dataset["y"],
   initialization_function, repetition, L, i_0
 )
-#>             x1     x2
-#> relbel   1.128 1.1880
-#> strength 0.820 0.9392
+#>              x1     x2
+#> relbel   0.9400 1.1240
+#> strength 0.2592 0.7596
 ```

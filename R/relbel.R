@@ -50,7 +50,9 @@ relbel <- function(
   # todo: after fixing get_single_a_b_s1_s2(), consider removing this if-else...
   # ...and just using get_single_a_b_s1_s2(feature)
   if (is.null(initialization_function)) {
-    initialization_function <- get_single_a_b_s1_s2
+    initialization_function <- function(feature) {
+      list(a = 0, b = 2, s_1 = 2, s_2 = 4)
+    }
   }
 
   sapply(x, function(x_i) {

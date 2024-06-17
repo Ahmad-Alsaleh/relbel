@@ -13,12 +13,12 @@ knitr::opts_chunk$set(
 )
 ```
 
-# relbel
+# relbel <a href="https://ahmad-alsaleh.github.io/relbel/"><img src="man/figures/logo.webp" align="right" height="120" alt="relbel website" /></a>
 
 <!-- badges: start -->
 
-[![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-%23FE5196?logo=conventionalcommits&logoColor=white)](https://www.conventionalcommits.org/) [![License: GPL v3](https://img.shields.io/badge/License-GPL_v3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
-[![R-CMD-check](https://github.com/Ahmad-Alsaleh/relbel/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/Ahmad-Alsaleh/relbel/actions/workflows/R-CMD-check.yaml)
+[![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-%23FE5196?logo=conventionalcommits&logoColor=white)](https://www.conventionalcommits.org/) [![License: GPL v3](https://img.shields.io/badge/License-GPL_v3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0) [![R-CMD-check](https://github.com/Ahmad-Alsaleh/relbel/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/Ahmad-Alsaleh/relbel/actions/workflows/R-CMD-check.yaml)
+
 <!-- badges: end -->
 
 `relbel` computes the Relative Belief Ratio, a k-sample Bayesian Test for Mean.

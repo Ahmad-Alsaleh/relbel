@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# relbel
+# relbel <a href="https://ahmad-alsaleh.github.io/relbel/"><img src="man/figures/logo.webp" align="right" height="120" alt="relbel website" /></a>
 
 <!-- badges: start -->
 
@@ -10,6 +10,7 @@ Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-%23FE5196?log
 [![License: GPL
 v3](https://img.shields.io/badge/License-GPL_v3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 [![R-CMD-check](https://github.com/Ahmad-Alsaleh/relbel/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/Ahmad-Alsaleh/relbel/actions/workflows/R-CMD-check.yaml)
+
 <!-- badges: end -->
 
 `relbel` computes the Relative Belief Ratio, a k-sample Bayesian Test
@@ -47,6 +48,6 @@ relbel(
   initialization_function, repetition, L, i_0
 )
 #>             x1     x2
-#> relbel   1.032 1.1040
-#> strength 0.617 0.7618
+#> relbel   1.128 1.1880
+#> strength 0.820 0.9392
 ```
